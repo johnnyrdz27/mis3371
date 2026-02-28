@@ -1,0 +1,112 @@
+/*
+Program name: patient-form.html
+Author: Jonathan Rodriguez
+Date created: 2026-02-24
+Date last edited: 2026-02-27
+Version: 1.0
+Description: This is the CSS code with the styling elementsfor the patient registration form.
+*/
+
+
+body {
+    background-color:rgb(47, 105, 172);
+    color:#ffd966;
+    font-family: Trebuchet MS, Lucida Sans;
+}
+
+h1{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    margin-top: 60px;
+    margin-bottom:70px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h2{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+a{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    font-size: larger;
+}
+
+a:visited {
+    color: #e9e2ee;
+}
+
+.banner {
+    background-color: #0b4f4f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-title{
+    background-color: #0b4f4f;
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    font-size: 20px;
+    font-weight: bold;  
+    margin-left: 20px; 
+}
+
+.middle {
+    color: #f5f5f5;
+    padding: 15px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer{
+    background-color: #0b4f4f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#date {
+    font-family: Trebuchet MS, Lucida Sans;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffd966; 
+}
+
+[name="symptoms"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+}
+
+[name="submit"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    background-color:rgb(8, 232, 71);
+    font-size:xx-large;
+    margin-right: 50px;
+}
+
+[name="reset"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    background-color: #db0d0d;
+    margin-left: 100px;
+}
+
+[name="contact us"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    font-size: larger;
+    background-color: #e5be30;
+}
+
+
