@@ -1,0 +1,210 @@
+<!--
+Program name: patient-form.html
+Author: Jonathan Rodriguez
+Date created: 2026-02-24
+Date last edited: 2026-03-26
+Version: 2t.0
+Description: This is the HTML code for the main page of the patient registration form.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title> Health Premier Medical Patient Registration </title>
+   <link href= "styles.css" rel= "stylesheet" >
+   <script src="script.js"></script>
+</head>  
+  
+<body>
+
+<div class= "banner">
+    <img src="heart-rate-pulse-on-transparent-background-free-png.png" alt="Logo" width="300" height="180">
+    <h1> Health Premier Medical </h1>
+    <p id="date"></p>
+</div>
+
+<div class = "middle">
+    <h2> Patient Registration </h2>
+    <p> Please fill out the form below to register as a patient at Health Premier Medical. All fields marked with an asterisk (*) are required. </p>
+    <form action="Thank-you.html">
+        <table border="3" cellpadding="8" width="100%"> 
+            <tr> <td colspan="4" class="section-title"> PERSONAL INFORMATION</td></tr>
+            <tr>
+                <td> First Name * : <input type="text" name="firstname" id="firstname" maxlength="30" pattern="[A-Za-z'\-]+" title="letters, apostrophes, and dashes only" required></td>
+                <td> Preferred Name: <input type="text" name="preferredname" id="preferredname" maxlength="30" pattern="[A-Za-z'\-]+" title="letters, apostrophes, and dashes only"></td>
+                <td> MI: <input type="text" name="mi" id="mi" maxlength="1" pattern="[A-Za-z]?" title="only one letter"></td>
+                <td> Last Name * : <input type = "text" name = "lastname" id="lastname" maxlength="30" pattern="[A-Za-z'\-2-5]+" title="Letters, apostrophes, numbers 2 to 5, ie, the 3rd, and dashes only" required></td>
+            </tr>
+
+            <tr>
+                <td> Birthdate * : <input type="date" name="birthdate" id="birthdate" title="Enter your birthdate" onblur="validateDob()" required></td><span class="error" id="dob-error"></span>
+                <td> Minor: <input type="radio" name="minor" value="Yes"> Y <input type= radio name="minor" value="No">N</td>
+                <td> SSN * : <input type= "password" name= "ssn" id="ssn" maxlength="11" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" placeholder="XXX-XX-XXXX" title="Format: XXX-XX-XXXX" onblur="validateSsn()" required></td><span class="error" id="ssn-error"></span>
+                <td> Sex * : <input type="radio" name="sex" value="Male" required> Male <input type="radio" name="sex" value="Female" required> Female</td>
+            </tr>
+
+            <tr><td colspan="4" class="section-title"> ADDRESS</td></tr>
+            <tr>
+                <td> Address Line 1 * : <input type="text" name="address1" id="address1" maxlength="30" minlength="2" title="2-30 characters" required></td>
+                <td> Address Line 2: <input type="text" name="address2" id="address2" maxlength="30" minlength ="2" title="2-30 characters"></td>
+                <td colspan="2"> City * : <input type="text" name="city" id="city" maxlength="30" minlength="2" title="2-30 characters" required></td>
+            </tr>
+
+            <tr>
+                <td>State *:
+                <select name="state" id="state" >
+                     <option value="">Select</option>
+                     <option value="AL">Alabama</option>
+                     <option value="AK">Alaska</option>
+                     <option value="AZ">Arizona</option>
+                     <option value="CT">Connecticut</option>
+                     <option value="DE">Delaware</option>
+                     <option value="DC">DC</option>
+                     <option value="FL">Florida</option>
+                     <option value="GA">Georgia</option>
+                     <option value="HI">Hawaii</option>
+                     <option value="ID">Idaho</option>
+                     <option value="IL">Illinois</option>
+                     <option value="IN">Indiana</option>
+                     <option value="IA">Iowa</option>
+                     <option value="KS">Kansas</option>
+                     <option value="KY">Kentucky</option>
+                     <option value="LA">Louisiana</option>
+                     <option value="ME">Maine</option>
+                     <option value="MD">Maryland</option>
+                     <option value="MA">Massachusetts</option>
+                     <option value="MI">Michigan</option>
+                     <option value="MN">Minnesota</option>
+                     <option value="MS">Mississippi</option>
+                     <option value="MO">Missouri</option>
+                     <option value="MT">Montana</option>
+                     <option value="NE">Nebraska</option>
+                     <option value="NV">Nevada</option>
+                     <option value="NH">New Hampshire</option>
+                     <option value="NJ">New Jersey</option>
+                     <option value="NM">New Mexico</option>
+                     <option value="NY">New York</option>
+                     <option value="NC">North Carolina</option>
+                     <option value="ND">North Dakota</option>
+                     <option value="OH">Ohio</option>
+                     <option value="OK">Oklahoma</option>
+                     <option value="OR">Oregon</option>
+                     <option value="PA">Pennsylvania</option>
+                     <option value="PR">Puerto Rico</option>
+                     <option value="RI">Rhode Island</option>
+                     <option value="SC">South Carolina</option>
+                     <option value="SD">South Dakota</option>
+                     <option value="TN">Tennessee</option>
+                     <option value="TX">Texas</option>
+                     <option value="UT">Utah</option>
+                     <option value="VT">Vermont</option>
+                     <option value="VA">Virginia</option>
+                     <option value="WA">Washington</option>
+                     <option value="WV">West Virginia</option>
+                     <option value="WI">Wisconsin</option>
+                     <option value="WY">Wyoming</option>
+                </select>
+                </td>
+                <td colspan="3">Zip Code * : <input type="text" name="zip" id="zip" maxlength="10" pattern="[0-9]{5}(-[0-9]{4})?" title="Format: 12345 or 12345-6789" onblur="validateZcode()" required></td><span class="error" id="zcode-error"></span>
+            </tr>
+
+            <tr><td colspan="4" class="section-title"> CONTACT INFORMATION</td></tr>
+
+            <tr>
+                <td>Phone Number * : <input type="tel" name="phone" id="phone" maxlength="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX" title="Format: 555-555-5555"required></td>
+                <td colspan="3">Email Address * : <input type="email" name="email" id="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="example@domain.com" title="Format: example@domain.com" required></td>
+            </tr>
+
+            <tr> <td colspan="4" class="section-title"> ACCOUNT</td></tr>
+            <tr>
+                <td>Username * : <input type="text" name="username" id="username" maxlength="20" minlength="5" title="5-20 characters. First character must be a letter. No special characters besides - or _" required></td><span class="error" id="uid-error"></span>
+                <td>Password * : <input type="password" name="pword" id="pword" maxlength="20" minlength="8" title="8-30 characters. atleast 1 upper case character, 1 lower case character, 1 number, 1 special character.No spaces" onblur="validatePass()" oninput="validatePass()" onfocus = "validatePass()" required></td><span class="error" id="pword1-error"></span>
+                <td colspan="2">Confirm Password * : <input type="password" name="confirm_pword" id="confirm_pword" maxlength="20" minlength="8" title="8-30 characters. atleast 1 upper case character, 1 lower case character, 1 number, 1 special character.No spaces" onblur="confrimPword()" oninput="confrimPword()" onfocus="confrimPword()" required></td><span class="error" id="pword2-error"></span>
+            </tr>
+
+            <tr> <td colspan="4" class="section-title"> INSURANCE INFORMATION</td></tr>
+            <tr>
+                <td>Insurance * :</td><td colspan="3"> <input type="radio" name="insurance" value="Yes" required> Yes <input type="radio" name="insurance" value="No" required> No </td>
+            </tr>
+
+            <tr><td colspan="4" class="section-title"> VACCINATIONS</td></tr>
+            <tr>
+                <td>Check all vaccinations that apply:</td>
+                <td colspan="3">
+                <input type="checkbox" name="vaccines" value="influenza"> Flu
+                <input type="checkbox" name="vaccines" value="HPV"> HPV
+                <input type="checkbox" name="vaccines" value="covid"> COVID-19
+                <input type="checkbox" name="vaccines" value="smallpox"> Small Pox
+                <input type="checkbox" name="vaccines" value="tetanus"> Tetanus
+                </td>
+            </tr>
+
+            <tr> <td colspan="4" class="section-title"> SYMPTOMS</td></tr>
+            <tr>
+                <td colspan="4"><textarea name="symptoms" id="symptoms" placeholder="List any symptoms you are experiencing..." rows="3" cols="100"></textarea></td>
+            </tr>
+
+            <tr> <td colspan="4" class="section-title"> PAIN SCALE (0-10)</td></tr>
+            <tr>
+                <td colspan="4"> <input type="range" name="painSlider" id="painSlider" min="0" max="10" value="5"><span id="painValue">0=No pain 10=Extreme pain</span></td>
+            </tr>
+            <tr> <td colspan="4" class="section-title"> DESIRED SALARY</td></tr>
+
+            <tr>
+                <td colspan="4">
+                    <div class="buttons">
+                    <input type="submit" name="submit" value="SUBMIT">
+                    <input type="button" id="reviewButton" value="REVIEW INFORMATION">
+                    <input type="reset" name="reset" value="CLEAR AND START OVER">
+                    </div>
+
+                    <div class="pword-message">
+                         <span id="msg1"></span> <br/>
+                         <span id="msg2"></span> <br/>
+                         <span id="msg3"></span> <br/>
+                         <span id="msg4"></span> <br/>
+                    </div>
+
+
+                </td>
+            </tr>
+
+        </table>
+    </form>
+
+    <div id="reviewPanel">
+        <h3>--- PLEASE REVIEW THIS INFORMATION ---</h3>
+    <div id= "reviewData"></div>
+    <br>
+    <div class = "reviewButtons">
+        <button id="closeReviewButton">Close Review</button>
+    </div>
+    </div>
+
+
+    </div>
+</div>
+
+<br>
+<br>
+<div class = "footer">
+    <table width="100%">
+        <tr>
+            <td> Health Premier Medical <br> 456 Wellness Way <br> Sugar Land, TX 77496 </td>
+            <td><input type="button" name="contact us" onclick="alert('Contact us at: 1-800-222-5555')" value="CONTACT US"></td>
+            <td><a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.instagram.com/">Instagram</a></td>
+        </tr>
+    </table>      
+</div>
+    
+
+
+
+
+<script>
+    initalizeFunctions();
+</script>
+
+</body>
+</html>
