@@ -1,0 +1,53 @@
+<!--
+Program name: thankyou.html
+Author: Your Name
+Date created: February 27, 2026
+Date last edited: February 27, 2026
+Version: 1.0
+Description: Thank you page for form submission.
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+       <title> Health Premier Medical Patient Registration </title>
+       <link href= "styles.css" rel= "stylesheet" >
+    </head>
+
+<div class = "banner">
+    <img src="heart-rate-pulse-on-transparent-background-free-png.png" alt="Logo" width="300" height="180">
+    <h1> Health Premier Medical </h1>
+    <p id="date"></p>
+</div>
+
+    <body>
+        <h1> Thank You for Registering! </h1>
+        <p> We have received your information and will be in touch shortly. </p>
+        <p> If you have any questions, please contact us at 1-800-222-5555. </p>
+
+    <br>
+    <br>
+
+
+
+    <div class = "footer">
+    <table width="100%">
+        <tr>
+            <td> Health Premier Medical <br> 456 Wellness Way <br> Sugar Land, TX 77496 </td>
+            <td><input type="button" name="contact us" onclick="alert('Contact us at: 1-800-222-5555')" value="CONTACT US"></td>
+            <td><a href="https://www.facebook.com/">Facebook</a> | <a href="https://www.instagram.com/">Instagram</a></td>
+        </tr>
+    </table>      
+    </div>
+
+
+
+    <script>
+     let d = new Date();
+     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+     let dateString = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
+     document.getElementById('date').textContent = dateString;
+    </script>
+    </body>   
+</html>
