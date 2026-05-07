@@ -1,0 +1,224 @@
+/*
+Program name: hw3styles.css
+Author: Jonathan Rodriguez
+Date created: 2026-02-24
+Date last edited: 2026-04-16
+Version: 3.0
+Description: This is the CSS code with the styling elementsfor the patient registration form.
+*/
+
+
+body {
+    background-color:rgb(47, 105, 172);
+    color:#ffd966;
+    font-family: Trebuchet MS, Lucida Sans;
+}
+
+h1{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    margin-top: 60px;
+    margin-bottom:70px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h2{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+}
+a{
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    font-size: larger;
+}
+
+a:visited {
+    color: #e9e2ee;
+}
+
+.banner {
+    background-color: #0b4f4f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-title{
+    background-color: #0b4f4f;
+    font-family: Trebuchet MS, Lucida Sans;
+    color:#e5be30;
+    font-size: 20px;
+    font-weight: bold;  
+    margin-left: 20px; 
+}
+
+.middle {
+    color: #f5f5f5;
+    padding: 15px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer{
+    background-color: #0b4f4f;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.error {
+    color: #ff6a6a;
+    font-size: 20px;
+    font-family: Trebuchet MS, Lucida Sans;
+    /*font-weight: bold;*/
+}
+
+.pword-message {
+    text-align: left;
+    font-family: Trebuchet MS;
+    font-size: 20px;
+    /*font-weight: bold;*/
+    position: relative;
+    box-align: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: #ff6a6a;
+}
+
+#reviewButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;;
+    border-width: 3px;
+    border-style: solid;
+    color: #0e0b01;
+    background-color: #09e748;
+    font-size: x-large;
+    font-family: Trebuchet MS, Lucida Sans;
+    font-weight: bold;
+
+}
+
+#closeReviewButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-width: 3px;
+    border-style: solid;
+    color: #0e0b01;
+    background-color: #e5be30;
+    font-size: x-large;
+    font-family: Trebuchet MS, Lucida Sans;
+    font-weight: bold;
+
+}
+
+#date {
+    font-family: Trebuchet MS, Lucida Sans;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffd966; 
+}
+
+#dob-error{
+    color: #ff6a6a;
+    font-size: 20px;
+    font-family: Trebuchet MS, Lucida Sans;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#alertPanel {
+    display: none;
+    position: fixed;
+    box-align: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    z-index: 9999;
+    left: 500px;
+    top: 200px;
+    width: 30%;
+    height: 40%;
+    overflow: auto;
+    background-color: #0b4f4f;
+}
+
+#alertMessage {
+    background-color: transparent;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    box-align: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+}
+
+#closeAlertButton {
+    background-color: wheat;
+    border-width: 3px;
+    border-style: solid;
+    font-size: 20px;
+    font-weight: bold;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px    ;
+    text-align: center;
+    font-family: Trebuchet MS, Lucida Sans;
+}
+
+[name="symptoms"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+}
+
+[name="submit"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    background-color:#3cf871;
+    font-size:xx-large;
+    margin-right: 50px;
+}
+
+[name = "VALIDATE"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    background-color: #e5be30;
+    font-size:x-large;
+}
+
+[name="reset"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    background-color: #db0d0d;
+    margin-left: 100px;
+}
+
+[name="contact us"]{
+    font-family: Trebuchet MS, Lucida Sans;
+    font-size: larger;
+    background-color: #e5be30;
+}
+
+
